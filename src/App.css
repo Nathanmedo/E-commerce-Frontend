@@ -1,0 +1,33 @@
+.cart{
+    @apply relative;
+}
+
+.cart::before{
+    content: attr(cartitemcount);
+    @apply absolute px-[3px] h-[.8rem] leading-[.8rem] font-light rounded tabular-nums text-[10px] flex items-center justify-center bg-green-600 text-white right-0 overflow-hidden
+}
+
+@supports(scroll-behavior: smooth){
+    .cart-scroll{
+        scrollbar-width: thin;
+        scrollbar-color: rgb(10, 163, 10) white;
+    }
+}
+
+.bgImg{
+    opacity: 0;
+    animation: introImg .5s linear .4s 1 forwards;
+}
+.bgImg img{
+    
+}
+@keyframes introImg {
+    0%{
+        transform: scale(5.5);
+    }100%{
+        opacity: 1;
+        transform: scale(1);
+        object-fit: contain;
+        transition: transform .15s cubic-bezier(0.165, 0.84, 0.44, 1) ;
+    }
+}
